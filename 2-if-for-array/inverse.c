@@ -1,17 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int n,k,a;
-    scanf("%d",&n);
-    a=n;
+    int n,k,a,b=0;
     char xulie[20],zancun[20];
-    fgets(xulie,n+1,stdin);
-    scanf("%d",&k);
+    scanf("%d%s%d",&n,xulie,&k);
+    a=n-1;
     for(int i=k-1;i>=0;i--)
     {
-        zancun[i]=xulie[k-i];
+        zancun[b]=xulie[i];
+        b++;
     }
-    for(int i=k;i<=n;i++)
+    for(int i=k;i<n;i++)
     {
         zancun[i]=xulie[a];
         a--;
