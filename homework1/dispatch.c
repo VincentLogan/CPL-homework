@@ -3,7 +3,7 @@ int main()
 {
     int n,m,cache=0,zancun,answer=0;
     scanf("%d%d",&m,&n);
-    int item_machine[n+1][m+1],item_time[n+1][m+1],order[405]={0},time[21][8005]={0},step[21]={0},start[21]={0};
+    int item_machine[21][21]={0},item_time[21][21]={0},order[405]={0},time[21][8005]={0},step[21]={0},start[21]={0};
     for(int i=1;i<=n*m;i++)
     {
         scanf("%d",&order[i]);
@@ -27,16 +27,19 @@ int main()
     {
         start[order[i]]++;
         zancun=start[order[i]];
-        while(zancun-start[order[i]]<item_time[order[i]][step[order[i]]+1]-1)
+        if(item_time[order[i]][step[order[i]]+1]>1)
         {
-            if(time[item_machine[order[i]][step[order[i]]+1]][zancun]==0)
+            while(zancun-start[order[i]]<item_time[order[i]][step[order[i]]+1])
             {
-                zancun++;
-            }
-            else
-            {
-                zancun++;
-                start[order[i]]=zancun;
+                if(time[item_machine[order[i]][step[order[i]]+1]][zancun]==0)
+                {
+                    zancun++;
+                }
+                else
+                {
+                    zancun++;
+                    start[order[i]]=zancun;
+                }
             }
         }
         for(int j=0;j<item_time[order[i]][step[order[i]]+1];j++)
