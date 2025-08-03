@@ -22,11 +22,11 @@ int main()
         mood=mood_initial[i];
         for(int j=0;j<n;j++)
         {
-            if(mood_initial[i]<=present[j][0])
+            if(mood<=present[j][0])
             {
                 mood+=present[j][1];
             }
-            else if(mood_initial[i]>present[j][0]&&mood-present[j][2]>=mood-present[j][2])
+            else if(mood>present[j][0]&&mood-present[j][2]>=0)
             {
                 mood=mood-present[j][2];
             }
