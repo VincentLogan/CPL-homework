@@ -2,8 +2,8 @@
 #include<stdlib.h>
 int main()
 {
-    FILE *fin = fopen("input.txt", "r");
-    FILE *fout = fopen("output.txt", "w");
+    FILE *fin = fopen("marathon.in.txt", "r");
+    FILE *fout = fopen("marathon.out.txt", "w");
     if (fin == NULL || fout == NULL) {
         fprintf(stderr, "文件打开失败\n");
         return 1;
