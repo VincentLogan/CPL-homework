@@ -2,18 +2,14 @@
 #include<stdlib.h>
 int main()
 {
-    FILE *fin = fopen("marathon.in.txt", "r");
-    FILE *fout = fopen("marathon.out.txt", "w");
-    if (fin == NULL || fout == NULL) {
-        fprintf(stderr, "文件打开失败\n");
-        return 1;
-    }
+    freopen("marathon.in","r",stdin);
+    freopen("marathon.out","w",stdout);
     int n,skip_point=1,save=0,S1,S2,sum=0;
-    fscanf(fin,"%d",&n);
+    scanf("%d",&n);
     int coordinate[n][2];
     for(int i=0;i<n;i++)
     {
-        fscanf(fin,"%d%d",&coordinate[i][0],&coordinate[i][1]);
+        fscanf("%d%d",&coordinate[i][0],&coordinate[i][1]);
     }
     for(int i=1;i<n-1;i++)
     {
@@ -29,8 +25,8 @@ int main()
     {
         sum+=abs(coordinate[i][0]-coordinate[i+1][0])+abs(coordinate[i][1]-coordinate[i+1][1]);
     }
-    fprintf(fout,"%d",sum-save);
-    fclose(fin);
-    fclose(fout);
+    printf("%d",sum-save);
+    fclose(stdin);
+    fclose(stdout);
     return 0;
 }
