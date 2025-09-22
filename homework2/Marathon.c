@@ -9,7 +9,7 @@ int main()
     int coordinate[n][2];
     for(int i=0;i<n;i++)
     {
-        fscanf("%d%d",&coordinate[i][0],&coordinate[i][1]);
+        scanf("%d%d",&coordinate[i][0],&coordinate[i][1]);
     }
     for(int i=1;i<n-1;i++)
     {
@@ -25,8 +25,8 @@ int main()
     {
         sum+=abs(coordinate[i][0]-coordinate[i+1][0])+abs(coordinate[i][1]-coordinate[i+1][1]);
     }
-    printf("%d",sum-save);
-    fclose(stdin);
-    fclose(stdout);
+    printf("%d\n",sum-save);
+    //fclose(stdin);
+    //fclose(stdout);
     return 0;
 }
