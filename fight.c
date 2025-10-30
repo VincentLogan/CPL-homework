@@ -17,7 +17,7 @@ void player (void){
 			break;
 		    }
 		case 2:{
-			printf("lucky hit��  ");
+			printf("lucky hit!  ");
 			int random_value=rand()%5;
 			if(random_value<3){
 				printf("just so so\n");
