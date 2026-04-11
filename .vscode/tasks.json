@@ -3,13 +3,14 @@
         {
             "type": "shell",
             "label": "C/C++: gcc 编译",
-            "command": "gcc",
+            "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lm"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -29,17 +30,19 @@
                     "-g",
                     "${file}",
                     "-o",
-                    "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                    "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                    "-lm"
                 ]
             },
             "linux": {
-                "command": "gcc",
+                "command": "/usr/bin/gcc",
                 "args": [
                     "-fdiagnostics-color=always",
                     "-g",
                     "${file}",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}"
+                    "${fileDirname}/${fileBasenameNoExtension}",
+                    "-lm"
                 ]
             }
         },
@@ -52,7 +55,8 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lm"
             ],
             "options": {
                 "cwd": "${fileDirname}"

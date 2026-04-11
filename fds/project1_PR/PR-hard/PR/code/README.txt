@@ -1,1 +1,0 @@
-将C文件复制到你所使用的IDE（VSCODE、Dev等)并编译运行，即可得到report中的相应结果，如果在Dev中编译遇到问题，详见report的解决方法。
